@@ -2,6 +2,10 @@ package app.studyrewards.model;
 
 import java.io.Serializable;
 
+/**
+ * TaskLog class to register activity after a study session
+ * implements Serializable to allow storing information in files
+ */
 public class TaskLog implements Serializable {
 
     private long startTime;

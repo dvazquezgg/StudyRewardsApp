@@ -9,6 +9,10 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A clas to read initial values from assets
+ * All initial values are contained in CSV text files
+ */
 public class CSVReader {
 
     Context context;

@@ -8,15 +8,31 @@
 
 
     <TextView
+        android:id="@+id/lblAddTaskTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:minHeight="48dp"
+        android:text="@string/add_task_title"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/purple_500"
+        android:textSize="24sp"
+        android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@+id/lblTaskTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/lblTaskTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/task_title"
-        app:layout_constraintBottom_toTopOf="@+id/lblDeadline"
+        app:layout_constraintBottom_toTopOf="@+id/lblHoursRequired"
         app:layout_constraintEnd_toStartOf="@+id/textTaskTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/lblAddTaskTitle" />
 
     <EditText
         android:id="@+id/textTaskTitle"
@@ -26,10 +42,37 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text="@string/task_title"
-        app:layout_constraintBottom_toTopOf="@+id/lblDeadline"
+        app:layout_constraintBottom_toTopOf="@+id/lblHoursRequired"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/lblTaskTitle"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAddTaskTitle"
+        tools:ignore="DuplicateSpeakableTextCheck"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/lblHoursRequired"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hours_for_reward"
+        app:layout_constraintBottom_toTopOf="@+id/lblDeadline"
+        app:layout_constraintEnd_toStartOf="@+id/textTaskTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblTaskTitle" />
+
+    <EditText
+        android:id="@+id/textHoursRequired"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="@string/hours_default_value"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/lblDeadline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lblHoursRequired"
+        app:layout_constraintTop_toBottomOf="@id/textTaskTitle"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
@@ -40,8 +83,8 @@
         app:layout_constraintBottom_toTopOf="@id/cvDeadline"
         app:layout_constraintEnd_toStartOf="@id/tvDeadline"
         app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="@+id/lblTaskTitle"
-        app:layout_constraintTop_toBottomOf="@id/lblTaskTitle" />
+        app:layout_constraintStart_toStartOf="@+id/lblHoursRequired"
+        app:layout_constraintTop_toBottomOf="@id/lblHoursRequired" />
 
     <TextView
         android:id="@+id/tvDeadline"
@@ -62,7 +105,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDeadline" />
 
-
     <Button
         android:id="@+id/btnAddTaskDetail"
         android:layout_width="wrap_content"
@@ -72,6 +114,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cvDeadline" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
