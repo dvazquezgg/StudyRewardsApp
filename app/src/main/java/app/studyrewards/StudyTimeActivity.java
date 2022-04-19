@@ -47,7 +47,7 @@ public class StudyTimeActivity extends AppCompatActivity implements View.OnClick
     private Task currentTask;
 
     String TAG = "StudyTimeActivity";
-    StudyManagement management;
+    StudyManagement management; // General StudyManagement object to store app information
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

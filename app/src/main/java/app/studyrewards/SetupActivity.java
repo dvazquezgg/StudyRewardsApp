@@ -33,7 +33,7 @@ public class SetupActivity extends AppCompatActivity  implements AdapterView.OnI
     private String selectedReward;
 
     String TAG = "SetupActivity";
-    private StudyManagement studyManagement;
+    private StudyManagement studyManagement; // General StudyManagement object to store app information
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

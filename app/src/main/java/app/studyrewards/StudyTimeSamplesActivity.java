@@ -33,7 +33,7 @@ public class StudyTimeSamplesActivity extends AppCompatActivity implements View.
     private long totalTime;
 
     private String currentTask;
-    String TAG = "StudyTimeActivity";
+    String TAG = "StudyTimeActivity"; // General StudyManagement object to store app information
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

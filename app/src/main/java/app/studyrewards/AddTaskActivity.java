@@ -39,7 +39,7 @@ public class AddTaskActivity extends AppCompatActivity implements View.OnClickLi
     private int totalTime;
 
     String TAG = "AddTaskActivity";
-    StudyManagement management;
+    StudyManagement management; // General StudyManagement object to store app information
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +81,11 @@ public class AddTaskActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-
+    /**
+     * Converting total time to integer
+     * @param totalTimeStr
+     * @return
+     */
     public int getTotalTime(String totalTimeStr){
         int totalTime = 0;
         try {
@@ -92,6 +96,11 @@ public class AddTaskActivity extends AppCompatActivity implements View.OnClickLi
         return totalTime;
     }
 
+    /**
+     * Converting a String into a Date with SimpleDateFormat
+     * @param dateString
+     * @return
+     */
     public Date getDate(String dateString) { // format dd-MM-yyyy
         Date deadline = null;
         try {
@@ -106,6 +115,7 @@ public class AddTaskActivity extends AppCompatActivity implements View.OnClickLi
 
 /**
  * Inner class to serve as a listener for the Calendar Control
+ * Scaffolding from Android developers
  */
 class CalendarListener implements CalendarView.OnDateChangeListener {
 
@@ -119,7 +129,5 @@ class CalendarListener implements CalendarView.OnDateChangeListener {
         String date = dayOfMonth + "-" + (month + 1) + "-" + year;
         this.textView.setText(date);
     }
-
-
 
 }

@@ -21,10 +21,17 @@ public class FileStorageAndroid {
 
     final static String DATA_FILE = "study_management.data";
 
+    /**
+     * Writes the current object into a data file into the device's file system
+     * @param context
+     * @param management
+     * @throws IOException
+     */
     public static void updateManagementData(Context context, StudyManagement management) throws IOException {
         try {
             File file = new File(context.getFilesDir(), DATA_FILE);
             FileOutputStream fileOutputStream = new FileOutputStream(file);
+            // We use Serialization to convert the object into text to store into the file
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(management);
             objectOutputStream.close();
@@ -35,10 +42,17 @@ public class FileStorageAndroid {
         }
     }
 
+    /**
+     * Reads a file from device filesystem
+     * @param context
+     * @return
+     * @throws IOException
+     */
     public static StudyManagement getManagementData(Context context) throws IOException {
         try{
             File file = new File(context.getFilesDir(), DATA_FILE);
             FileInputStream fileInputStream = new FileInputStream(file);
+            // We use Serialization to convert the object into text to store into the file
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             StudyManagement management = (StudyManagement) objectInputStream.readObject();
             objectInputStream.close();

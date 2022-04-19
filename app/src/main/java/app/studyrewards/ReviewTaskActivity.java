@@ -37,7 +37,7 @@ public class ReviewTaskActivity extends AppCompatActivity implements View.OnClic
     private Button btnStudyTime;
 
     String TAG = "ReviewTaskActivity";
-    StudyManagement management;
+    StudyManagement management; // General StudyManagement object to store app information
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,19 +52,21 @@ public class ReviewTaskActivity extends AppCompatActivity implements View.OnClic
             ReviewTaskActivity.this.startActivity(myIntent);
         }
 
+        // Generation radio buttons from each task in registered in the app
         rgTasks = findViewById(R.id.rgTasks);
         rgTasks.removeAllViews();
+        // Looping all tasks
         for(Task task:management.getTasks()){
             RadioButton radio = new RadioButton(this);
             if (task.getViewId() == -1) {
-                radio.setId(View.generateViewId());
+                radio.setId(View.generateViewId()); // create a resource id from the app
                 task.setViewId(radio.getId());
             } else{
                 radio.setId(task.getViewId());
             }
             radio.setText(task.getTitle());
             radio.setOnClickListener(this);
-            rgTasks.addView(radio);
+            rgTasks.addView(radio);  // adding the generated radio button to the group
         }
 
         progress = findViewById(R.id.progressBar);

@@ -34,7 +34,7 @@ public class AddTaskLogActivity extends AppCompatActivity implements View.OnClic
     private long startTime;
 
     String TAG = "AddTaskLogActivity";
-    StudyManagement management;
+    StudyManagement management; // General StudyManagement object to store app information
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
